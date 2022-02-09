@@ -1,0 +1,37 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+/*  custom proparti for CSS */
+:root {
+  --shadow-1: 13px 14px 19px 0px rgba(65,41,255,0.68);
+  --shadow-2: 13px 14px 19px 0px rgba(255,36,36,0.68);
+  --shadow-3: 6px 6px 19px 0px rgba(13,37,41,0.68);
+}
+
+/* Basic reseting for unuseing any fremwork */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*  sign "*" star/multiple define all tag in HTML */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: poppins;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+tr, 
