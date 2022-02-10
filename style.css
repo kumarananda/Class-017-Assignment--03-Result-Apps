@@ -33,3 +33,12 @@ a:hover {
   text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
+
+span.mess p {
+  color: red;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px;
+  background: #a2af3c;
+  border-radius: 5px;
+}
