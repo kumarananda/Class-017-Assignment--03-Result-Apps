@@ -1,78 +1,23 @@
 
 
-const tabManu = document.querySelectorAll('.left-body-menu ul li a.m-item');
-const tabManuAll = document.querySelectorAll('.left-body-menu ul li a');
-const Allpane = document.querySelectorAll('.main-contetn .contetnt-body .tab-pen');
+// get element 
+const student_form = document.getElementById('student_form');
 
+student_form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
+    let Name = student_form.querySelector('input[placeholder="Student Name"]').value;
+    let Roll = student_form.querySelector('input[placeholder="Student Roll"]').value;
+    let Class = student_form.querySelector('input[placeholder="Class"]').value;
+    let Photo = student_form.querySelector('input[placeholder="Photo"]').value;
+    let Gender = student_form.querySelector('input[name="gender"]').value;
 
-tabManuAll.forEach(item => {
-    
-    item.addEventListener('click', function (e) {
-        e.preventDefault(); 
+    // marks
+    let ban = student_form.querySelector('input[placeholder="Bangla"]').value;
+    let eng = student_form.querySelector('input[placeholder="English"]').value;
+    let math = student_form.querySelector('input[placeholder="Math"]').value;
+    let s_sci = student_form.querySelector('input[placeholder="Social Science"]').value;
+    let rel = student_form.querySelector('input[placeholder="Religion"]').value;
 
-        
-
-        Allpane.forEach(item => {
-            if(item != this){
-                item.classList.remove('activeFP');
-                
-            }   
-        });
-        tabManuAll.forEach(element => {
-            if(element != this){
-                element.classList.remove('activeCM');
-            }
-        });
-
-        const pane = document.querySelector(this.getAttribute('href'));
-        pane.classList.add('activeFP')
-        
-        
-        if(item == this){
-            item.classList.add('activeCM');
-        }else{
-            item.classList.remove('activeCM');
-
-        }
-        
-    });
-
-
+    console.log(Name, Roll, Class, Photo, Gender, ban, eng, math, s_sci, rel);
 });
-
-
-
-tabManu.forEach(item => {
-    item.addEventListener('click', function(e){
-        e.preventDefault();
-
-        
-        tabManu.forEach(item => {
-            item.classList.remove('active');
-            item.nextElementSibling.style.height = '0'
-        })
-        
-        if(item == this){
-            item.classList.add('active');
-            item.nextElementSibling.style.height = 'fit-content';
-        }else{
-            item.classList.remove('active');
-            item.nextElementSibling.style.height = '0';
-        }
-
-    })
-});
-
-
-
-
-
-
-
-
-
-
-// console.log(tabManu);
-// console.log(tabManuAll);
-//e.nextElementSibling.style.height = 0;
