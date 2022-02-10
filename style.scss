@@ -34,4 +34,15 @@ a:hover {
   text-decoration: none;
 }
 
-tr, 
+span.mess p {
+  color: red;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px;
+  background: #a2af3c;
+  border-radius: 5px;
+}
+.modal-dialog {
+	max-width: 600px;
+	margin: 1.75rem auto;
+}

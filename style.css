@@ -32,7 +32,6 @@ a,
 a:hover {
   text-decoration: none;
 }
-/*# sourceMappingURL=style.css.map */
 
 span.mess p {
   color: red;
@@ -42,3 +41,9 @@ span.mess p {
   background: #a2af3c;
   border-radius: 5px;
 }
+
+.modal-dialog {
+  max-width: 600px;
+  margin: 1.75rem auto;
+}
+/*# sourceMappingURL=style.css.map */
