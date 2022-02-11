@@ -183,19 +183,85 @@ function getSingleResult(index){
     let LS_data = dataGet('Stu_data');
 
     JsElementResuat.innerHTML = `
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Student Name: ${LS_data[index].Name}</h5>
+            <h5>Student Roll: ${LS_data[index].Roll}</h5>
+            <h5>Student Class: ${LS_data[index].ClassN}</h5>
+        </div>
+        <div class="col-md-6">
+        <div class="studentPhoto">
+            <img class="shadow" style="width: 82px;" src="https://scontent.fdac13-1.fna.fbcdn.net/v/t1.6435-9/160980436_2873645602899195_291559288417585381_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG0Kh_y38OxYEwEtOJruOL2Gkkuz9CX2b0aSS7P0JfZvd-IMxXnZ-64HpuMeCeFp-u-Sm2yNSJM8dQTFSjH5lVt&_nc_ohc=h0DXI5AkK2YAX9PH9WO&_nc_ht=scontent.fdac13-1.fna&oh=00_AT-oCC9dQ_U6UhgQ49W_4C39a_OcYNHJkgKyKr2pXOGkwA&oe=622B2B97" alt="">
+        </div> 
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table table-striped table-bordered table-hover table-condensed text-center">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>GPA</th>
+                    <th>Grade</th>
+                    <th>CGPA</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody class="markssheet">
+                <tr>
+                    <td>Bangla</td>
+                    <td>${LS_data[index].Bangla}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                    <td  rowspan="6" >CGPA</td>
+                    <td rowspan="6" >Result</td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td>${LS_data[index].English}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td>${LS_data[index].Math}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                </tr>
+                <tr>
+                    <td>Science</td>
+                    <td>${LS_data[index].Science}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                </tr>
+                <tr>
+                    <td>Social Science</td>
+                    <td>${LS_data[index].Social}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                </tr>
+                <tr>
+                    <td>Religion</td>
+                    <td>${LS_data[index].rel}</td>
+                    <td>GPA</td>
+                    <td>Grade</td>
+                </tr>
+                    
 
-        
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+    
     
     
     
     `;
-
-
-
-
-
-
-    
+   
     // console.log(LS_data[index].Bangla);
 
 }
