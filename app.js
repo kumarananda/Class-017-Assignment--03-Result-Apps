@@ -21,7 +21,7 @@ forName.innerHTML = `Name must be a-z,A-Z min 4 max 20 characters`;
 forName.style.color = 'red';
 
 let forRoll = document.createElement('p');
-forRoll.innerHTML = `Roll must be 2-4 number characters`;
+forRoll.innerHTML = `Roll must be 2-4 number characters & not be 0`;
 forRoll.style.color = 'red';
 
 let forClass = document.createElement('p');
@@ -69,18 +69,34 @@ student_form.addEventListener('submit', function (e) {
         name.nextElementSibling.append(forName);
         name.nextElementSibling.style.display = 'block';
         name.style.marginBottom= '0px';
+
+        mess.innerHTML ='';
         
-    }else if(rollV.test(roll.value) == false){
+    }else if(rollV.test(roll.value) == false || roll.value < 1){
         roll.nextElementSibling.append(forRoll);
         roll.nextElementSibling.style.display = 'block';
         roll.style.marginBottom= '0px';
+
+        mess.innerHTML ='';
+        name.nextElementSibling.style.display = 'none';
     }else if(classV.test(classN.value) == false){
         classN.nextElementSibling.append(forClass);
         classN.nextElementSibling.style.display = 'block';
         classN.style.marginBottom= '0px';
+
+        mess.innerHTML ='';
+        name.nextElementSibling.style.display = 'none';
+        roll.nextElementSibling.style.display = 'none';
+
     }else if(markV(ban.value) == false || markV(eng.value) == false || markV(math.value) == false || markV(sci.value) == false || markV(s_sci.value) == false || markV(rel.value) == false){
         marksInput.nextElementSibling.textContent = `Marks must be 0-100`;
         marksInput.nextElementSibling.style.color = 'red';
+
+        mess.innerHTML ='';
+        name.nextElementSibling.style.display = 'none';
+        roll.nextElementSibling.style.display = 'none';
+        classN.nextElementSibling.style.display = 'none';
+
     }else {
         
         let LS_data = [];
@@ -107,19 +123,25 @@ student_form.addEventListener('submit', function (e) {
         
         all_student();
 
-        // student_form.querySelector('input[placeholder="Student Name"]').value = '';
-        // student_form.querySelector('input[placeholder="Student Roll"]').value = '';
-        // student_form.querySelector('input[placeholder="Class"]').value = '';
-        // student_form.querySelector('input[placeholder="Photo"]').value = '';
+        student_form.querySelector('input[placeholder="Student Name"]').value = '';
+        student_form.querySelector('input[placeholder="Student Roll"]').value = '';
+        student_form.querySelector('input[placeholder="Class"]').value = '';
+        student_form.querySelector('input[placeholder="Photo"]').value = '';
 
         // student_form.querySelector('input[name="gender"]:checked');
         
-        // student_form.querySelector('input[placeholder="Bangla"]').value = '';
-        // student_form.querySelector('input[placeholder="English"]').value = '';
-        // student_form.querySelector('input[placeholder="Math"]').value = '';
-        // student_form.querySelector('input[placeholder="Science"]').value = '';
-        // student_form.querySelector('input[placeholder="Social Science"]').value = '';
-        // student_form.querySelector('input[placeholder="Religion"]').value = '';
+        student_form.querySelector('input[placeholder="Bangla"]').value = '';
+        student_form.querySelector('input[placeholder="English"]').value = '';
+        student_form.querySelector('input[placeholder="Math"]').value = '';
+        student_form.querySelector('input[placeholder="Science"]').value = '';
+        student_form.querySelector('input[placeholder="Social Science"]').value = '';
+        student_form.querySelector('input[placeholder="Religion"]').value = '';
+
+        mess.innerHTML ='';
+        name.nextElementSibling.style.display = 'none';
+        roll.nextElementSibling.style.display = 'none';
+        classN.nextElementSibling.style.display = 'none';
+        marksInput.nextElementSibling.style.display = 'none';
 
         
 
