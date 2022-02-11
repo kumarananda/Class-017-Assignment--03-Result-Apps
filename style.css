@@ -33,6 +33,10 @@ a:hover {
   text-decoration: none;
 }
 
+td {
+  vertical-align: middle;
+}
+
 span.mess p {
   color: red;
   width: 100%;
@@ -43,7 +47,40 @@ span.mess p {
 }
 
 .modal-dialog {
-  max-width: 600px;
+  max-width: 700px;
   margin: 1.75rem auto;
+}
+
+.modalcustom .modal-dialog .modal-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.modalcustom .modal-dialog .modal-content .modal-headcustom .midContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modalcustom .modal-dialog .modal-content .modal-header .btn-close {
+  width: 5px;
+  height: 0px;
+}
+
+.modalcustom .modal-dialog .modal-content .modal-body .studentPhoto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.modalcustom .modal-dialog .modal-content .modal-body .studentPhoto img {
+  width: 120px;
+  border: 5px solid #fff;
 }
 /*# sourceMappingURL=style.css.map */

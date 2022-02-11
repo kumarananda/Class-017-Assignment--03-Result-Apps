@@ -34,6 +34,10 @@ a:hover {
   text-decoration: none;
 }
 
+td {
+	vertical-align: middle;
+}
+
 span.mess p {
   color: red;
   width: 100%;
@@ -43,6 +47,52 @@ span.mess p {
   border-radius: 5px;
 }
 .modal-dialog {
-	max-width: 600px;
+	max-width: 700px;
 	margin: 1.75rem auto;
+}
+
+.modalcustom {
+
+
+  .modal-dialog {
+
+    .modal-content {
+
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .modal-headcustom {
+
+        .midContent {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .modal-header {
+
+
+        .btn-close {
+          
+          width: 5px;
+          height: 0px;
+        }
+      }
+      .modal-body {
+
+        .studentPhoto {
+
+          display: flex;
+          justify-content: end;
+          img {
+            width: 120px;
+            border: 5px solid #fff ;
+          }
+        }
+
+        
+      }
+    }
+
+    
+  }
 }

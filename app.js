@@ -39,7 +39,9 @@ forClass.style.color = 'red';
 const student_form = document.getElementById('student_form');
 const mess = document.querySelector('.mess');
 const marksInput = document.querySelector('.marksInput');
-const studentRow = document.querySelector('.studentRow')
+const studentRow = document.querySelector('.studentRow');
+
+
 
 student_form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -102,27 +104,31 @@ student_form.addEventListener('submit', function (e) {
         })
         dataSend('Stu_data', LS_data);
 
+        
+        all_student();
 
-        student_form.querySelector('input[placeholder="Student Name"]') = '';
-        student_form.querySelector('input[placeholder="Student Roll"]') = '';
-        student_form.querySelector('input[placeholder="Class"]') = '';
-        student_form.querySelector('input[placeholder="Photo"]') = '';
+        // student_form.querySelector('input[placeholder="Student Name"]').value = '';
+        // student_form.querySelector('input[placeholder="Student Roll"]').value = '';
+        // student_form.querySelector('input[placeholder="Class"]').value = '';
+        // student_form.querySelector('input[placeholder="Photo"]').value = '';
+
         // student_form.querySelector('input[name="gender"]:checked');
         
-        student_form.querySelector('input[placeholder="Bangla"]') = '';
-        student_form.querySelector('input[placeholder="English"]') = '';
-        student_form.querySelector('input[placeholder="Math"]') = '';
-        student_form.querySelector('input[placeholder="Science"]') = '';
-        student_form.querySelector('input[placeholder="Social Science"]') = '';
-        student_form.querySelector('input[placeholder="Religion"]') = '';
+        // student_form.querySelector('input[placeholder="Bangla"]').value = '';
+        // student_form.querySelector('input[placeholder="English"]').value = '';
+        // student_form.querySelector('input[placeholder="Math"]').value = '';
+        // student_form.querySelector('input[placeholder="Science"]').value = '';
+        // student_form.querySelector('input[placeholder="Social Science"]').value = '';
+        // student_form.querySelector('input[placeholder="Religion"]').value = '';
 
+        
 
     }
-
 
     
 });
 
+all_student();
 function all_student() {
     
     let all_data = dataGet('Stu_data');
@@ -132,23 +138,64 @@ function all_student() {
     all_data.map((student, index) => {
         data += `
         
-        <tr>
-            <td>#</td>
-            <td>name</td>
-            <td>Roll</td>
-            <td>Class</td>
-            <td>Gender</td>
+        <tr style="vertical-align: middle;">
+            <td>${index + 1}</td>
+            <td>${student.Name}</td>
+            <td>${student.Roll}</td>
+            <td>${student.ClassN}</td>
+            <td>${student.Gender}</td>
             <td>Grade</td>
             <td>CPA</td>
-            <td>Photo</td>
+            <td><img style=" width:50px; height:50px; object-fit:cover;" src="${student.Photo}"></td>
             <td>
                 
-                <button type="button" class="viewD btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Details</button>
-                <button class="delB btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
+                <button onclick="getSingleResult(${ index })" type="button" class="viewD btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal">Details</button>
+                <button onclick="deletestudent(${ index })" class="delB btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
             </td>
     </tr>
         
         
         `;
-    })
+    });
+
+    studentRow.innerHTML = data ;
+};
+
+
+
+function deletestudent(index) {
+    // alert(index);
+    let LS_data = dataGet('Stu_data');
+    let confirmVa = confirm(`Are you want to delete ${LS_data[index].Name} data`)
+
+    if(confirmVa == true){
+        let LS_data = dataGet('Stu_data'); // get localstorage array data
+        LS_data.splice(index , 1); // remove seleceted data 
+        dataSend('Stu_data', LS_data); // replase and resand new array on localstorage
+        all_student(); // recall html sending function
+    }else{
+        return false;
+    }
+}
+
+const JsElementResuat = document.querySelector('.JsElementResuat');
+function getSingleResult(index){
+    let LS_data = dataGet('Stu_data');
+
+    JsElementResuat.innerHTML = `
+
+        
+    
+    
+    
+    `;
+
+
+
+
+
+
+    
+    // console.log(LS_data[index].Bangla);
+
 }
