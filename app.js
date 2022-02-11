@@ -1,6 +1,6 @@
 
 // regulaar expretion / validition
-let nameV = /^[a-zA-Z\s]{4,20}$/;
+let nameV = /^[a-zA-Z\s\.]{4,20}$/;
 let rollV = /^[0-9]{1,4}$/;
 let classV = /^[0-9]{2}$/;
 //marks valivation 
