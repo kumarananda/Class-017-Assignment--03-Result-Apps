@@ -17,7 +17,7 @@ function markV(m){
 
 // creat elements
 let forName = document.createElement('p');
-forName.innerHTML = `Name must be a-z,A-Z min 4 max 20 characters`;
+forName.innerHTML = `Name must be a-z, A-Z, "." min 4 max 20 characters`;
 forName.style.color = 'red';
 
 let forRoll = document.createElement('p');
