@@ -72,6 +72,18 @@ function Myresult(){
 
     this.cgpacal = (bangla, english, math, socialScience, science, religion) => {
 
+        let AvrageCgpacal = (bangla + english + math + socialScience + science + religion) / 6;
+
+        if (bangla == 0 || english == 0 || math == 0 || socialScience == 0 || science == 0 || religion == 0) {
+            return `0.00`;
+        } else {
+            return AvrageCgpacal.toFixed(2); //
+        }
+
+        
+    }
+    this.cgpacalEXT = (bangla, english, math, socialScience, science, religion) => {
+
         let cgpacal = (bangla + english + math + socialScience + science + religion) / 6;
 
         if (bangla == 0 || english == 0 || math == 0 || socialScience == 0 || science == 0 || religion == 0) {

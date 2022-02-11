@@ -131,11 +131,16 @@ student_form.addEventListener('submit', function (e) {
 all_student();
 function all_student() {
     
+
+    
     let all_data = dataGet('Stu_data');
 
     let data= "";
 
     all_data.map((student, index) => {
+
+        let cgpacheck = myr.cgpacal(myr.gpa(student.Bangla), myr.gpa(student.English), myr.gpa(student.Math), myr.gpa(student.Science), myr.gpa(student.Social), myr.gpa(student.rel) );
+
         data += `
         
         <tr style="vertical-align: middle;">
@@ -144,8 +149,8 @@ function all_student() {
             <td>${student.Roll}</td>
             <td>${student.ClassN}</td>
             <td>${student.Gender}</td>
-            <td>Grade</td>
-            <td>CPA</td>
+            <td>${cgpacheck}</td>
+            <td>${myr.totalGrade(cgpacheck)}</td>
             <td><img style=" width:50px; height:50px; object-fit:cover;" src="${student.Photo}"></td>
             <td>
                 
@@ -182,6 +187,9 @@ const JsElementResuat = document.querySelector('.JsElementResuat');
 function getSingleResult(index){
     let LS_data = dataGet('Stu_data');
 
+    let cgpacheck = myr.cgpacal(myr.gpa(LS_data[index].Bangla), myr.gpa(LS_data[index].English), myr.gpa(LS_data[index].Math), myr.gpa(LS_data[index].Science), myr.gpa(LS_data[index].Social), myr.gpa(LS_data[index].rel) );
+    
+
     JsElementResuat.innerHTML = `
     
     <div class="row">
@@ -215,8 +223,8 @@ function getSingleResult(index){
                         <td>${LS_data[index].Bangla}</td>
                         <td>${myr.gpa(LS_data[index].Bangla)}</td>
                         <td>${myr.grade(LS_data[index].Bangla)}</td>
-                        <td  rowspan="6" >CGPA</td>
-                        <td rowspan="6" >Result</td>
+                        <td  rowspan="6" >${cgpacheck}</td>
+                        <td rowspan="6" >${myr.totalGrade(cgpacheck)}</td>
                     </tr>
                     <tr>
                         <td>English</td>
